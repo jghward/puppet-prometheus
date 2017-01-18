@@ -1,6 +1,7 @@
 class prometheus::haproxy_exporter(
   $arch                 = $::prometheus::params::arch,
   $bin_dir              = $::prometheus::params::bin_dir,
+  $cnf_scrape_uri       = $::prometheus::params::haproxy_exporter_cnf_scrape_uri,
   $download_extension   = $::prometheus::params::haproxy_exporter_download_extension,
   $download_url         = undef,
   $download_url_base    = $::prometheus::params::haproxy_exporter_download_url_base,
@@ -33,7 +34,7 @@ class prometheus::haproxy_exporter(
     default => undef,
   }
 
-  $options = ""
+  $options = "-haproxy.scrape-uri=\"${cnf_scrape_uri}\" ${extra_options}"
 
   prometheus::daemon { 'haproxy_exporter':
     install_method     => $install_method,

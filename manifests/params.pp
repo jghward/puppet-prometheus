@@ -29,6 +29,7 @@ class prometheus::params {
   $group = 'prometheus'
   $install_method = 'url'
   $localstorage = '/var/lib/prometheus'
+  $haproxy_exporter_cnf_scrape_uri = 'http://localhost:1234/haproxy?stats;csv'
   $haproxy_exporter_download_extension = 'tar.gz'
   $haproxy_exporter_download_url_base = 'https://github.com/prometheus/haproxy_exporter/releases'
   $haproxy_exporter_extra_groups = []
