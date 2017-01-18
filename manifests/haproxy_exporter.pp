@@ -20,7 +20,7 @@ class prometheus::haproxy_exporter(
   $service_enable       = true,
   $service_ensure       = 'running',
   $user                 = $::prometheus::params::haproxy_exporter_user,
-  $version,
+  $version              = $::prometheus::params::haproxy_exporter_version,
 ) inherits prometheus::params {
 
   $real_download_url = pick($download_url,"${download_url_base}/download/v${version}/${package_name}-${version}.${os}-${arch}.${download_extension}")

@@ -36,6 +36,7 @@ class prometheus::params {
   $haproxy_exporter_package_ensure = 'latest'
   $haproxy_exporter_package_name = 'haproxy_exporter'
   $haproxy_exporter_user = 'haproxy-user'
+  $haproxy_exporter_version = '0.7.1'
   $mysqld_exporter_cnf_config_path = '/etc/.my.cnf'
   $mysqld_exporter_cnf_host = 'localhost'
   $mysqld_exporter_cnf_password = 'password'
